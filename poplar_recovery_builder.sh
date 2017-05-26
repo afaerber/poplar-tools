@@ -467,7 +467,7 @@ function populate_root() {
 	# The tar file containing the root file system uses "binary"
 	# as it's root directory; that'll be our mount point.  Mount
 	# the root file system, and mount what will be /boot within that.
-	sudo tar -xzf ${ROOT_FS_ARCHIVE} || nope "failed to populate root"
+	sudo tar -xjf ${ROOT_FS_ARCHIVE} -C binary || nope "failed to populate root"
 
 	# Fill in /etc/fstab
 	fstab_init
